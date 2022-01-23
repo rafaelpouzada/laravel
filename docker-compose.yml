@@ -1,10 +1,23 @@
-version: '3.7'
+version: '3.9'
 services:
   web:
-    image: rafaelpouzada/laravel-image
+    build: .
     ports:
       - "8080:80"
     tty: true
     working_dir: /var/www/html
     volumes:
       - .:/var/www/html
+  mysql:
+    container_name: mysql
+    restart: always
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=laravel
+    volumes:
+      - datavolume:/var/lib/mysql
+volumes:
+  datavolume:

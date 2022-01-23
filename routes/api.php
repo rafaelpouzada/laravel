@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('api')->group(function () {
+    Route::resource('vendedores', App\Http\Controllers\VendedorController::class);
+    Route::resource('vendas', App\Http\Controllers\VendaController::class);
+
+    Route::get('vendas/vendedor/{id}', 'App\Http\Controllers\VendaController@getVendasVendedor');
+});
