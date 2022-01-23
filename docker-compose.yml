@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  web:
+    image: rafaelpouzada/laravel-image
+    ports:
+      - "8080:80"
+    tty: true
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
