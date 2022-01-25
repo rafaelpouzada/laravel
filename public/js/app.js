@@ -5606,7 +5606,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -5620,19 +5619,7 @@ __webpack_require__.r(__webpack_exports__);
       _this.vendedores = response.data;
     });
   },
-  methods: {
-    deleteVendedor: function deleteVendedor(id) {
-      var _this2 = this;
-
-      this.axios["delete"]("http://localhost:8080/api/vendedores/".concat(id)).then(function (response) {
-        var i = _this2.vendedores.map(function (data) {
-          return data.id;
-        }).indexOf(id);
-
-        _this2.vendedores.splice(i, 1);
-      });
-    }
-  }
+  methods: {}
 });
 
 /***/ }),
@@ -50720,19 +50707,6 @@ var render = function () {
                       },
                     },
                     [_vm._v("Editar")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-danger",
-                      on: {
-                        click: function ($event) {
-                          return _vm.deleteVendedor(vendedor.id)
-                        },
-                      },
-                    },
-                    [_vm._v("Remover")]
                   ),
                 ],
                 1

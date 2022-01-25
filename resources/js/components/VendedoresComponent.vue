@@ -30,7 +30,6 @@
                 <td>
                     <div class="btn-group" role="group">
                         <router-link :to="{name: 'vendedorEditar', params: { id: vendedor.id }}" class="btn btn-success">Editar</router-link>
-                        <button class="btn btn-danger" @click="deleteVendedor(vendedor.id)">Remover</button>
                     </div>
                 </td>
             </tr>
@@ -54,14 +53,7 @@
                 });
         },
         methods: {
-            deleteVendedor(id) {
-                this.axios
-                    .delete(`http://localhost:8080/api/vendedores/${id}`)
-                    .then(response => {
-                        let i = this.vendedores.map(data => data.id).indexOf(id);
-                        this.vendedores.splice(i, 1)
-                    });
-            }
+
         }
     }
 </script>

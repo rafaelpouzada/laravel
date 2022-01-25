@@ -15,6 +15,12 @@ class VendaController extends Controller
         return VendaResource::collection($vendas);
     }
 
+    public function show($id)
+    {
+        $venda = Venda::find($id);
+        return new VendaResource($venda);
+    }
+
     public function store(Request $request)
     {
 
