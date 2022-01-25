@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('send-email-queue', 'App\Http\Controllers\SendVendasMailController@index');
+
+Route::get('{any}', function () {
+    return view('app');
+})->where('any', '.*');

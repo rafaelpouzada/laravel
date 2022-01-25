@@ -11,8 +11,8 @@ class VendaController extends Controller
 {
     public function index()
     {
-        $vendas = Venda::all()->toArray();
-        return array_reverse($vendas);
+        $vendas = Venda::all();
+        return VendaResource::collection($vendas);
     }
 
     public function store(Request $request)
